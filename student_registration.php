@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Data Entry Form</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
     <h2>Student Registration Form</h2>
     <p>Fill out the fields below to add a new profile to the management database.</p>
     
-    <form action="/mwalimu_school_management_system/includes/register.php" method="POST">
+    <form action="includes/register.php" method="POST">
       
       <!-- Row 1: Names -->
       <div class="form-row">
@@ -71,7 +71,7 @@
         </div>
         <div class="form-group">
           <label for="student-id">Student ID / Roll Number</label>
-          <input type="text" id="student-id" name="studentId" placeholder="e.g., STU-2026-889" required>
+          <input type="text" id="student-id" name="adm" placeholder="e.g., STU-2026-889" required>
         </div>
       </div>
 
@@ -85,6 +85,7 @@
 
       <!-- Action Footer -->
       <div class="form-actions">
+        <a class="btn-action btn-view" href="student_view.php">Back</a>
         <button type="reset">Clear Form</button>
         <button type="submit" name="submit_student">Save Student Profile</button>
       </div>

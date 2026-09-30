@@ -1,12 +1,13 @@
 <?php
-//error_reporting(0);
+// error_reporting(0);
+
 $localhost = "localhost";
 $username = "root";
 $password = "";
 $dbname = "students_management";
 
-$conn = mysqli_connect($localhost, $username, $password, $dbname);
+$conn = new mysqli($localhost, $username, $password, $dbname);
 
-if (!$conn) {
+if(!$conn){
     die("Connection failed: " . mysqli_connect_error());
 }
