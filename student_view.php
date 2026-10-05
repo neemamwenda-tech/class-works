@@ -1,9 +1,8 @@
 <?php
-require 'includes/sql.php';
 
-//$conn->query()
+require "includes/sql.php";
+
 ?>
-
 
 
 <!DOCTYPE html>
@@ -149,6 +148,7 @@ require 'includes/sql.php';
         <div class="page-header">
             <div>
                 <h2>Registered Student Directory</h2>
+                <p style="color: #666; font-size: 14px; margin-top: 4px;">Viewing database entries registered through the student form.</p>
             </div>
             <a href="student_registration.php" class="btn-add">+ Register New Student</a>
         </div>
@@ -170,33 +170,36 @@ require 'includes/sql.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
+                   <?php
+
                         $sql = "SELECT * FROM tbl_students";
-                        $result = $conn->query($sql);
-                        if($result->num_rows < 1){
-                           echo "No data found"; 
+
+                        $stmt = $conn->query($sql);
+
+                        if($stmt->num_rows < 1){
+                            echo "No records found";
                         }else{
-                            while($student = $result->fetch_assoc()){
-                           
-                    ?>
+
+                        while($students = $stmt->fetch_assoc()){
+                   ?>
                     <tr>
-                        <td><strong><?php echo $student['adm']; ?></strong></td>
-                        <td><?php echo $student['fname']; ?></td>
-                        <td><?php echo $student['lname']; ?></td>
-                        <td><?php echo $student['dob']; ?></td>
-                        <td><span class="badge-gender male"><?php echo $student['gender']; ?></span></td>
-                        <td><?php echo $student['email']; ?></td>
-                        <td><?php echo $student['phone']; ?></td>
-                        <td><?php echo $student['grade']; ?></td>
-                        <td><?php echo $student['address']; ?></td>
+                        
+                        <td><strong><?php echo $students['adm']?></strong></td>
+                        <td><?php echo $students['fname']?></td>
+                        <td><?php echo $students['lname']?></td>
+                        <td><?php echo $students['dob']?></td>
+                        <td><span class="badge-gender male"><?php echo $students['gender']?></span></td>
+                        <td><?php echo $students['email']?></td>
+                        <td><?php echo $students['phone']?></td>
+                        <td><?php echo $students['grade']?></td>
+                        <td><?php echo $students['address']?></td>
                         <td>
-                            <a href="student_edit.php?sid=<?php echo $student['id']; ?>" class="btn-action btn-view">Edit</a>
-                            <a href="includes/delete.php?sid=<?php echo $student['id']; ?>" class="btn-action btn-delete">Delete</a>
+                            <a href ="student_edit.php?sid=<?php echo $students['id']?>" class="btn-action btn-view">Edit</a>
+                            <a href ="includes/delete.php?sid=<?php echo $students['id']?>" class="btn-action btn-delete">Delete</a>
                         </td>
                     </tr>
+                          <?php }}?>
 
-                    <?php }} ?>
-                    
                 </tbody>
             </table>
         </div>

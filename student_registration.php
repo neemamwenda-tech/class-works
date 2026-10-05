@@ -61,7 +61,7 @@
       <div class="form-row">
         <div class="form-group">
           <label for="grade-level">Grade/Class Level</label>
-          <select id="grade-level" name="gradeLevel" required>
+          <select id="grade-level" name="grade" required>
             <option value="" disabled selected>Select level...</option>
             <option value="grade-9">Grade 9</option>
             <option value="grade-10">Grade 10</option>
@@ -71,7 +71,7 @@
         </div>
         <div class="form-group">
           <label for="student-id">Student ID / Roll Number</label>
-          <input type="text" id="student-id" name="adm" placeholder="e.g., STU-2026-889" required>
+          <input type="text" id="student-id" name="studentId" placeholder="e.g., STU-2026-889" required>
         </div>
       </div>
 
@@ -85,7 +85,6 @@
 
       <!-- Action Footer -->
       <div class="form-actions">
-        <a class="btn-action btn-view" href="student_view.php">Back</a>
         <button type="reset">Clear Form</button>
         <button type="submit" name="submit_student">Save Student Profile</button>
       </div>

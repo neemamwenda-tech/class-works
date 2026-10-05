@@ -1,12 +1,12 @@
 <?php
 // error_reporting(0);
 
-$localhost = "localhost";
+$host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "students_management";
+$dbname = "groupb_mwalimu_school_manager";
 
-$conn = new mysqli($localhost, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 if(!$conn){
     die("Connection failed: " . mysqli_connect_error());
