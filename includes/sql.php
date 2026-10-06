@@ -4,7 +4,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "groupb_mwalimu_school_manager";
+$dbname = "students_management";
 
 $conn = new mysqli($host, $username, $password, $dbname);
 

@@ -7,13 +7,13 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+ 
   <div class="form-container">
     <h2>Student Registration Form</h2>
     <p>Fill out the fields below to add a new profile to the management database.</p>
-    
+   
     <form action="includes/register.php" method="POST">
-      
+     
       <!-- Row 1: Names -->
       <div class="form-row">
         <div class="form-group">
@@ -25,8 +25,8 @@
           <input type="text" id="last-name" name="lastName" placeholder="e.g., Doe" required>
         </div>
       </div>
-
-      
+ 
+     
       <div class="form-row">
         <div class="form-group">
           <label for="dob">Date of Birth</label>
@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-
+ 
       <!-- Row 3: Electronic Contacts -->
       <div class="form-row">
         <div class="form-group">
@@ -56,12 +56,12 @@
           <input type="tel" id="phone" name="phone" placeholder="e.g., +254 700 000000" required>
         </div>
       </div>
-
+ 
       <!-- Row 4: Institutional Categorization -->
       <div class="form-row">
         <div class="form-group">
           <label for="grade-level">Grade/Class Level</label>
-          <select id="grade-level" name="grade" required>
+          <select id="grade-level" name="gradeLevel" required>
             <option value="" disabled selected>Select level...</option>
             <option value="grade-9">Grade 9</option>
             <option value="grade-10">Grade 10</option>
@@ -71,26 +71,41 @@
         </div>
         <div class="form-group">
           <label for="student-id">Student ID / Roll Number</label>
-          <input type="text" id="student-id" name="studentId" placeholder="e.g., STU-2026-889" required>
+          <input type="text" id="student-id" name="adm" placeholder="e.g., STU-2026-889" required>
         </div>
       </div>
-
-      <!-- Row 5: Local Address -->
+ 
+<!-- Row 5: Password -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pwd">Password</label>
+          <input type="password" id="pwd" name="pwd" required>
+        </div>
+        <div class="form-group">
+          <label for="cpass">Confirm Password</label>
+          <input type="password" id="cpass" name="cpass" required>
+        </div>
+      </div>
+ 
+      <!-- Row 6: Local Address -->
       <div class="form-row">
         <div class="form-group full-width">
           <label for="address">Residential Address</label>
           <textarea id="address" name="address" placeholder="Street name, City, Postal Code" required></textarea>
         </div>
       </div>
-
+ 
       <!-- Action Footer -->
       <div class="form-actions">
+        <a class="btn-action btn-view" href="student_view.php">Back</a>
         <button type="reset">Clear Form</button>
         <button type="submit" name="submit_student">Save Student Profile</button>
       </div>
-
+ 
     </form>
   </div>
-
+ 
 </body>
 </html>
+ 
+ 
