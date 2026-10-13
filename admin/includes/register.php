@@ -37,12 +37,10 @@ if(isset($_POST['submit_student'])){
     else{
     $stmt->close();
  
-    $sql = "INSERT INTO tbl_students(fname,lname,dob,gender,email,phone, grade,adm,password,address) VALUES(?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO tbl_students(fname,lname,dob,gender,email,phone, grade,adm,address) VALUES(?,?,?,?,?,?,?,?,?)";
     $prep = $conn->prepare($sql);
  
-    $passHash = password_hash($pass, PASSWORD_DEFAULT);
- 
-    $prep->bind_param("ssssssssss",$fname, $lname,$dob,$gender,$email,$phone,$grade,$adm,$passHash,$address);
+    $prep->bind_param("ssssssssis",$fname, $lname,$dob,$gender,$email,$phone,$grade,$adm,$address);
     $prep->execute();
     if($prep){
         echo "<script>alert('Registration successful');</script>";

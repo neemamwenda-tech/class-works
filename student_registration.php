@@ -74,19 +74,7 @@
           <input type="text" id="student-id" name="adm" placeholder="e.g., STU-2026-889" required>
         </div>
       </div>
- 
-<!-- Row 5: Password -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="pwd">Password</label>
-          <input type="password" id="pwd" name="pwd" required>
-        </div>
-        <div class="form-group">
-          <label for="cpass">Confirm Password</label>
-          <input type="password" id="cpass" name="cpass" required>
-        </div>
-      </div>
- 
+  
       <!-- Row 6: Local Address -->
       <div class="form-row">
         <div class="form-group full-width">
